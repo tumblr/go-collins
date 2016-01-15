@@ -1,0 +1,16 @@
+{
+  "status": "success:created",
+  "data": {
+    "SUCCESS": true,
+    "Data": {
+      "ID": 1,
+      "ASSET_TAG": "tag1",
+      "CREATED": "2015-10-21T11:44:07",
+      "CREATED_BY": "blake",
+      "FORMAT": "text/plain",
+      "SOURCE": "API",
+      "TYPE": "DEBUG",
+      "MESSAGE": "Hello World"
+    }
+  }
+}

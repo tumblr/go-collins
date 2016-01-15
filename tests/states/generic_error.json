@@ -1,0 +1,6 @@
+{
+  "status": "error",
+  "data": {
+    "message": "The specified name is invalid. A name must be between 2 and 32 characters and be unique."
+  }
+}

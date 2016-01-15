@@ -1,0 +1,6 @@
+{
+  "status": "error",
+  "data": {
+    "message": "The specified asset type does not exist"
+  }
+}

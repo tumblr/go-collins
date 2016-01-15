@@ -1,0 +1,3 @@
+event: asset_update
+data: {"name":"asset_update","tag":"tag30","category":"Asset","data":{"ASSET":{"ID":1,"TAG":"tag30","STATE":{"ID":3,"STATUS":null,"NAME":"RUNNING","LABEL":"Running","DESCRIPTION":"A service in this state is operational."},"STATUS":"Allocated","TYPE":"SERVER_NODE","CREATED":"2013-08-28T12:51:00","UPDATED":"2015-12-05T19:53:27","DELETED":null}}}
+

@@ -1,0 +1,6 @@
+{
+  "status": "error",
+  "data": {
+    "message": "The specified name is already in use"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "status": "error",
+  "data": {
+    "message": "The specified state does not exist"
+  }
+}

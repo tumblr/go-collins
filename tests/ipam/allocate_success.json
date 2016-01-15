@@ -1,0 +1,16 @@
+{
+  "status": "success:created",
+  "data": {
+    "ADDRESSES": [
+      {
+        "ASSET_ID": 1,
+        "ASSET_TAG": "tag1",
+        "GATEWAY": "172.16.5.1",
+        "ADDRESS": "172.16.5.4",
+        "NETMASK": "255.255.255.0",
+        "POOL": "DEV",
+        "ID": 1
+      }
+    ]
+  }
+}

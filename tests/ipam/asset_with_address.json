@@ -1,0 +1,19 @@
+{
+  "status": "success:ok",
+  "data": {
+    "ID": 4,
+    "TAG": "tag1",
+    "STATE": {
+      "ID": 3,
+      "STATUS": null,
+      "NAME": "RUNNING",
+      "LABEL": "Running",
+      "DESCRIPTION": "A service in this state is operational."
+    },
+    "STATUS": "Provisioning",
+    "TYPE": "SERVER_NODE",
+    "CREATED": "2015-10-06T10:57:07",
+    "UPDATED": "2015-10-06T10:59:55",
+    "DELETED": null
+  }
+}

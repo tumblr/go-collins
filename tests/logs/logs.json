@@ -1,0 +1,40 @@
+{
+  "status": "success:ok",
+  "data": {
+    "Pagination": {
+      "PreviousPage": 0,
+      "CurrentPage": 0,
+      "NextPage": 0,
+      "TotalResults": 3
+    },
+    "Data": [
+      {
+        "ID": 3,
+        "ASSET_TAG": "tag1",
+        "CREATED": "2012-09-17T13:04:52",
+        "FORMAT": "text\/plain",
+        "SOURCE": "API",
+        "TYPE": "DEBUG",
+        "MESSAGE": "User blake: Hello World"
+      },
+      {
+        "ID": 2,
+        "ASSET_TAG": "tag1",
+        "CREATED": "2012-09-17T12:53:15",
+        "FORMAT": "text\/plain",
+        "SOURCE": "API",
+        "TYPE": "DEBUG",
+        "MESSAGE": "User blake: Hello World"
+      },
+      {
+        "ID": 1,
+        "ASSET_TAG": "tag1",
+        "CREATED": "2012-09-17T12:53:07",
+        "FORMAT": "text\/plain",
+        "SOURCE": "INTERNAL",
+        "TYPE": "INFORMATIONAL",
+        "MESSAGE": "Automatically created by database migration"
+      }
+    ]
+  }
+}

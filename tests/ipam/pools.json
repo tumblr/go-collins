@@ -1,0 +1,52 @@
+{
+  "status": "success:ok",
+  "data": {
+    "POOLS": [
+      {
+        "NAME": "ADMIN-OPS",
+        "NETWORK": "172.16.56.0\/24",
+        "START_ADDRESS": "172.16.56.5",
+        "SPECIFIED_GATEWAY": "Unspecified",
+        "GATEWAY": "172.16.56.1",
+        "BROADCAST": "172.16.56.255",
+        "POSSIBLE_ADDRESSES": 254
+      },
+      {
+        "NAME": "WEB-EDIT",
+        "NETWORK": "172.16.64.0\/24",
+        "START_ADDRESS": "172.16.64.5",
+        "SPECIFIED_GATEWAY": "Unspecified",
+        "GATEWAY": "172.16.64.1",
+        "BROADCAST": "172.16.64.255",
+        "POSSIBLE_ADDRESSES": 254
+      },
+      {
+        "NAME": "DEV",
+        "NETWORK": "172.16.5.0\/24",
+        "START_ADDRESS": "172.16.5.4",
+        "SPECIFIED_GATEWAY": "Unspecified",
+        "GATEWAY": "172.16.5.1",
+        "BROADCAST": "172.16.5.255",
+        "POSSIBLE_ADDRESSES": 254
+      },
+      {
+        "NAME": "WEB-SECURE",
+        "NETWORK": "172.16.73.0\/28",
+        "START_ADDRESS": "172.16.73.5",
+        "SPECIFIED_GATEWAY": "Unspecified",
+        "GATEWAY": "172.16.73.1",
+        "BROADCAST": "172.16.73.15",
+        "POSSIBLE_ADDRESSES": 14
+      },
+      {
+        "NAME": "AAA",
+        "NETWORK": "172.16.4.0\/28",
+        "START_ADDRESS": "172.16.4.4",
+        "SPECIFIED_GATEWAY": "Unspecified",
+        "GATEWAY": "172.16.4.1",
+        "BROADCAST": "172.16.4.15",
+        "POSSIBLE_ADDRESSES": 14
+      }
+    ]
+  }
+}

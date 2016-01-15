@@ -1,0 +1,14 @@
+{
+  "status": "success:ok",
+  "data": {
+    "ID": 15,
+    "STATUS": {
+      "ID": 5,
+      "NAME": "Maintenance",
+      "DESCRIPTION": "Asset is scheduled for maintenance"
+    },
+    "NAME": "HW_ON_FIRE",
+    "LABEL": "Hardware on Fire!",
+    "DESCRIPTION": "Use this state if hardware has caught on fire"
+  }
+}

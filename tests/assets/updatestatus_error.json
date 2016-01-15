@@ -1,0 +1,6 @@
+{
+  "status": "error",
+  "data": {
+    "message": "Either state or status must be specified but neither were found."
+  }
+}

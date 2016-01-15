@@ -1,0 +1,6 @@
+{
+  "status": "error",
+  "data": {
+    "message": "Asset with tag 'tag1' does not exist"
+  }
+}

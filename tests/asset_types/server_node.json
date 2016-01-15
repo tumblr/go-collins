@@ -1,0 +1,8 @@
+{
+  "status": "success:ok",
+  "data": {
+    "ID": 1,
+    "NAME": "SERVER_NODE",
+    "LABEL": "Server Node"
+  }
+}

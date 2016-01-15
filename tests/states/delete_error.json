@@ -1,0 +1,6 @@
+{
+  "status": "error",
+  "data": {
+    "message": "The specified state name does not exist and can not be deleted."
+  }
+}
