@@ -84,5 +84,4 @@ used to navigate through the pages.
 		}
 	}
 */
-
 package collins
