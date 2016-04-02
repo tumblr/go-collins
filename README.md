@@ -1,5 +1,8 @@
 # go-collins
 
+[![GoDoc](https://godoc.org/github.com/tumblr/go-collins/collins?status.svg)](https://godoc.org/github.com/tumblr/go-collins/collins)
+[![Travis CI](https://api.travis-ci.org/tumblr/go-collins.svg)](https://api.travis-ci.org/tumblr/go-collins.svg)
+
 go-collins is a client library for [Collins](http://tumblr.github.io/collins/)
 (our inventory management database) written in Go. It covers the full API and
 allows you to manage your assets and their data from Go applications. It is

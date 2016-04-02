@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"gopkg.in/tumblr/go-collins.v0/sseclient"
+	"gopkg.in/tumblr/go-collins.v0/collins/sseclient"
 )
 
 // FirehoseService provides functions to communicate with the collins firehose.
