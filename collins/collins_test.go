@@ -118,3 +118,21 @@ func TestNewClientFromYaml_error(t *testing.T) {
 		t.Errorf("Did not throw error with non-existant config file.")
 	}
 }
+
+func TestNewClientFromFiles(t *testing.T) {
+	client, err := NewClientFromFiles([]string{"../tests/test_config.yml"})
+	if err != nil {
+		t.Errorf("Failed to create client: %s", err)
+	}
+
+	if client.User != "testuser" || client.Password != "testpassword" {
+		t.Errorf("Failed to parse user or password")
+	}
+}
+
+func TestNewClientFromFiles_error(t *testing.T) {
+	_, err := NewClientFromFiles([]string{"../tests/test_config_non_existant.yml"})
+	if err == nil {
+		t.Errorf("Did not throw error with non-existant config file.")
+	}
+}
