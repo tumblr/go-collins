@@ -140,8 +140,9 @@ func NewClientFromYaml() (*Client, error) {
 	return NewClientFromFiles(yamlPaths...)
 }
 
-// NewClientFromFiles takes an array of paths to look for credentials, and if
-// one of them is successfully parsed it returns a Client.
+// NewClientFromFiles takes an array of paths to look for credentials, and
+// returns a Client based on the first config file that exists and parses
+// correctly. Otherwise, it returns nil and an error.
 func NewClientFromFiles(paths ...string) (*Client, error) {
 	f, err := openYamlFiles(paths...)
 	if err != nil {
