@@ -137,13 +137,13 @@ func NewClientFromYaml() (*Client, error) {
 		"/etc/collins.yml",
 		"/var/db/collins.yml",
 	}
-	return NewClientFromFiles(yamlPaths)
+	return NewClientFromFiles(yamlPaths...)
 }
 
 // NewClientFromFiles takes an array of paths to look for credentials, and if
 // one of them is successfully parsed it returns a Client.
-func NewClientFromFiles(paths []string) (*Client, error) {
-	f, err := openYamlFile(paths)
+func NewClientFromFiles(paths ...string) (*Client, error) {
+	f, err := openYamlFiles(paths...)
 	if err != nil {
 		return nil, err
 	}
@@ -167,7 +167,7 @@ func NewClientFromFiles(paths []string) (*Client, error) {
 	return NewClient(creds.Username, creds.Password, creds.Host)
 }
 
-func openYamlFile(paths []string) (io.Reader, error) {
+func openYamlFiles(paths ...string) (io.Reader, error) {
 	for _, path := range paths {
 		f, err := os.Open(path)
 		if err != nil {

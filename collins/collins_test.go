@@ -119,8 +119,8 @@ func TestNewClientFromYaml_error(t *testing.T) {
 	}
 }
 
-func TestNewClientFromFiles(t *testing.T) {
-	client, err := NewClientFromFiles([]string{"../tests/test_config.yml"})
+func TestNewClientFromFiles_single_file(t *testing.T) {
+	client, err := NewClientFromFiles("../tests/test_config.yml")
 	if err != nil {
 		t.Errorf("Failed to create client: %s", err)
 	}
@@ -130,8 +130,30 @@ func TestNewClientFromFiles(t *testing.T) {
 	}
 }
 
+func TestNewClientFromFiles_multiple_files(t *testing.T) {
+	client, err := NewClientFromFiles("../tests/test_config.yml", "../tests/test_config2.yml")
+	if err != nil {
+		t.Errorf("Failed to create client: %s", err)
+	}
+
+	if client.User != "testuser" || client.Password != "testpassword" {
+		t.Errorf("Failed to parse user or password")
+	}
+}
+
+func TestNewClientFromFiles_multiple_files_with_nonexistant(t *testing.T) {
+	client, err := NewClientFromFiles("../tests/test_config_non_existant.yml", "../tests/test_config2.yml")
+	if err != nil {
+		t.Errorf("Failed to create client: %s", err)
+	}
+
+	if client.User != "secondtestuser" || client.Password != "secondtestpassword" {
+		t.Errorf("Failed to parse user or password")
+	}
+}
+
 func TestNewClientFromFiles_error(t *testing.T) {
-	_, err := NewClientFromFiles([]string{"../tests/test_config_non_existant.yml"})
+	_, err := NewClientFromFiles("../tests/test_config_non_existant.yml")
 	if err == nil {
 		t.Errorf("Did not throw error with non-existant config file.")
 	}
