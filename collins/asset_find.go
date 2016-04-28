@@ -57,7 +57,7 @@ func (a AssetService) Find(opts *AssetFindOpts) ([]Asset, *Response, error) {
 
 // AssetService.FindSimilar queries collins for assets that are similar to the
 // asset represented by the tag passed as a parameter. See AssetFindOpts for
-// availble options.
+// available options.
 //
 // http://tumblr.github.io/collins/api.html#api-asset-asset-find-similar
 func (a AssetService) FindSimilar(tag string, opts *AssetFindOpts) ([]Asset, *Response, error) {
