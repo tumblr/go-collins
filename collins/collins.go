@@ -131,7 +131,20 @@ func NewClient(username, password, baseurl string) (*Client, error) {
 // * /etc/collins.yml
 // * /var/db/collins.yml
 func NewClientFromYaml() (*Client, error) {
-	f, err := openYamlFile()
+	yamlPaths := []string{
+		os.Getenv("COLLINS_CLIENT_CONFIG"),
+		path.Join(os.Getenv("HOME"), ".collins.yml"),
+		"/etc/collins.yml",
+		"/var/db/collins.yml",
+	}
+	return NewClientFromFiles(yamlPaths...)
+}
+
+// NewClientFromFiles takes an array of paths to look for credentials, and
+// returns a Client based on the first config file that exists and parses
+// correctly. Otherwise, it returns nil and an error.
+func NewClientFromFiles(paths ...string) (*Client, error) {
+	f, err := openYamlFiles(paths...)
 	if err != nil {
 		return nil, err
 	}
@@ -155,15 +168,8 @@ func NewClientFromYaml() (*Client, error) {
 	return NewClient(creds.Username, creds.Password, creds.Host)
 }
 
-func openYamlFile() (io.Reader, error) {
-	yamlPaths := []string{
-		os.Getenv("COLLINS_CLIENT_CONFIG"),
-		path.Join(os.Getenv("HOME"), ".collins.yml"),
-		"/etc/collins.yml",
-		"/var/db/collins.yml",
-	}
-
-	for _, path := range yamlPaths {
+func openYamlFiles(paths ...string) (io.Reader, error) {
+	for _, path := range paths {
 		f, err := os.Open(path)
 		if err != nil {
 			continue
@@ -172,7 +178,7 @@ func openYamlFile() (io.Reader, error) {
 		}
 	}
 
-	errStr := fmt.Sprintf("Could not load collins credentials from file. (Searched: %s)", strings.Join(yamlPaths, ", "))
+	errStr := fmt.Sprintf("Could not load collins credentials from file. (Searched: %s)", strings.Join(paths, ", "))
 	return nil, errors.New(errStr)
 }
 
