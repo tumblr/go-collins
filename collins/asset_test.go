@@ -36,6 +36,21 @@ func TestAssetService_Create_error(t *testing.T) {
 	}
 }
 
+func TestAssetService_Create_error_ipmi_pool(t *testing.T) {
+	setup()
+	defer teardown()
+
+	SetupPUT(400, "/api/asset/tag30", "../tests/assets/create_error_ipmi.json", "application/json;", t)
+
+	asset, _, err := client.Assets.Create("tag30", nil)
+	if err == nil {
+		t.Errorf("Asset.Create did not return error.")
+	}
+	if asset != nil {
+		t.Errorf("Asset is %T, want nil.", asset)
+	}
+}
+
 func TestAssetService_Update(t *testing.T) {
 	setup()
 	defer teardown()

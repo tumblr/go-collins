@@ -159,6 +159,7 @@ type PowerUnit struct {
 // (GenerateIPMI will default to false in the struct)
 type AssetCreateOpts struct {
 	GenerateIPMI bool   `url:"generate_ipmi,omitempty"`
+	IpmiPool     string `url:"ipmi_pool,omitempty"`
 	Status       string `url:"status,omitempty"`
 	AssetType    string `url:"type,omitempty"`
 }

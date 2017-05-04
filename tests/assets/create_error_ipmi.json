@@ -1,0 +1,6 @@
+{
+  "status": "error",
+  "data": {
+    "message": "Could not create asset: Invalid IPMI pool UNKNOWN specified"
+  }
+}
