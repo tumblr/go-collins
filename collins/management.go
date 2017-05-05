@@ -26,7 +26,7 @@ type ProvisionOpts struct {
 // collins.
 func (s ManagementService) powerAction(tag, action string) (*Response, error) {
 	data := struct {
-		Action string
+		Action string `url:"action"`
 	}{action}
 
 	ustr, err := addOptions("api/asset/"+tag+"/power", data)
