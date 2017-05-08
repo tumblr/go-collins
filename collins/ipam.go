@@ -127,20 +127,7 @@ func (s IPAMService) Delete(tag string, opts AddressDeleteOpts) (int, *Response,
 //
 // http://tumblr.github.io/collins/api.html#api-ipam-get-address-pools
 func (s IPAMService) Pools() ([]Pool, *Response, error) {
-	return s.doPoolRequest("api/address/pools")
-}
-
-// IPAMService.IpmiPools return a list of the available IP pools for IPMI/OOB
-// networks.
-//
-// http://tumblr.github.io/collins/api.html#api-ipam-get-ipmi-address-pools
-func (s IPAMService) IpmiPools() ([]Pool, *Response, error) {
-	return s.doPoolRequest("api/ipmi/pools")
-}
-
-// Helper function for various pool requests to avoid duplicate code.
-func (s IPAMService) doPoolRequest(url string) ([]Pool, *Response, error) {
-	ustr, err := addOptions(url, nil)
+	ustr, err := addOptions("api/address/pools", nil)
 	if err != nil {
 		return nil, nil, err
 	}
