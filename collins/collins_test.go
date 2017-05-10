@@ -103,7 +103,7 @@ func TestNewClientFromYaml(t *testing.T) {
 }
 
 func TestNewClientFromYaml_error(t *testing.T) {
-	err := os.Setenv("COLLINS_CLIENT_CONFIG", "../tests/test_config_non_existant.yml")
+	err := os.Setenv("COLLINS_CLIENT_CONFIG", "../tests/test_config_non_existent.yml")
 	if err != nil {
 		t.Errorf("Failed to set COLLINS_CLIENT_CONFIG environment variable.")
 	}
@@ -115,6 +115,6 @@ func TestNewClientFromYaml_error(t *testing.T) {
 
 	_, err = NewClientFromYaml()
 	if err == nil {
-		t.Errorf("Did not throw error with non-existant config file.")
+		t.Errorf("Did not throw error with non-existent config file.")
 	}
 }

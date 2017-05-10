@@ -176,7 +176,7 @@ func openYamlFile() (io.Reader, error) {
 	return nil, errors.New(errStr)
 }
 
-// NewRequest creates a new HTTP request which can then be perfomed by Do.
+// NewRequest creates a new HTTP request which can then be performed by Do.
 func (c *Client) NewRequest(method, path string) (*http.Request, error) {
 	rel, err := url.Parse(path)
 	if err != nil {
@@ -251,7 +251,7 @@ func (c *Client) Do(req *http.Request, v interface{}) (*Response, error) {
 			bufio.NewReader(resp.Body).WriteTo(errbuf)
 			collinsError.Data.Message = errbuf.String()
 		} else {
-			errstr := fmt.Sprintf("Response with unexpected Content-Type - `%s' recieved.", resp.Header.Get("Content-Type"))
+			errstr := fmt.Sprintf("Response with unexpected Content-Type - `%s' received.", resp.Header.Get("Content-Type"))
 			return response, errors.New(errstr)
 		}
 		collinsError.Data.Message = resp.Status + " returned from collins: " + collinsError.Data.Message
@@ -274,7 +274,7 @@ func (c *Client) Do(req *http.Request, v interface{}) (*Response, error) {
 			return response, err
 		}
 	} else {
-		errstr := fmt.Sprintf("Response with unexpected Content-Type - `%s' recieved. Erroring out.", resp.Header.Get("Content-Type"))
+		errstr := fmt.Sprintf("Response with unexpected Content-Type - `%s' received. Erroring out.", resp.Header.Get("Content-Type"))
 		return response, errors.New(errstr)
 	}
 
