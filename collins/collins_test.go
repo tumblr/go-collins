@@ -29,7 +29,7 @@ func teardown() {
 	server.Close()
 }
 
-func SetupMethod(code int, method, url, file string, content_type string, t *testing.T) {
+func SetupMethod(code int, method, url, file string, contentType string, t *testing.T) {
 	mux.HandleFunc(url, func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != method {
 			t.Errorf("Request method: %v, want %s", r.Method, method)
@@ -38,7 +38,7 @@ func SetupMethod(code int, method, url, file string, content_type string, t *tes
 		if err != nil {
 			t.Errorf("Could not read %s\n", file)
 		}
-		w.Header().Set("Content-Type", content_type)
+		w.Header().Set("Content-Type", contentType)
 		w.WriteHeader(code)
 		fmt.Fprintf(w, "%s", resp)
 	})
@@ -59,20 +59,20 @@ func SetupFirehose(file, contentType string, t *testing.T) {
 	})
 }
 
-func SetupGET(code int, url, file string, content_type string, t *testing.T) {
-	SetupMethod(code, "GET", url, file, content_type, t)
+func SetupGET(code int, url, file string, contentType string, t *testing.T) {
+	SetupMethod(code, "GET", url, file, contentType, t)
 }
 
-func SetupPUT(code int, url, file string, content_type string, t *testing.T) {
-	SetupMethod(code, "PUT", url, file, content_type, t)
+func SetupPUT(code int, url, file string, contentType string, t *testing.T) {
+	SetupMethod(code, "PUT", url, file, contentType, t)
 }
 
-func SetupPOST(code int, url, file string, content_type string, t *testing.T) {
-	SetupMethod(code, "POST", url, file, content_type, t)
+func SetupPOST(code int, url, file string, contentType string, t *testing.T) {
+	SetupMethod(code, "POST", url, file, contentType, t)
 }
 
-func SetupDELETE(code int, url, file string, content_type string, t *testing.T) {
-	SetupMethod(code, "DELETE", url, file, content_type, t)
+func SetupDELETE(code int, url, file string, contentType string, t *testing.T) {
+	SetupMethod(code, "DELETE", url, file, contentType, t)
 }
 
 func TestNewClient(t *testing.T) {

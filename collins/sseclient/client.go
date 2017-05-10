@@ -148,9 +148,9 @@ func eventLoop(events chan<- Event, data io.Reader, state *LoopState, d Decoder)
 		case bytes.Equal(fieldName(line), []byte("id")):
 			state.LastId = string(fieldValue(line))
 		case bytes.Equal(fieldName(line), []byte("retry")):
-			new_time, err := strconv.Atoi(string(fieldValue(line)))
+			newTime, err := strconv.Atoi(string(fieldValue(line)))
 			if err == nil {
-				state.ReconnectTime = new_time
+				state.ReconnectTime = newTime
 			}
 		}
 	}
