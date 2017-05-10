@@ -64,7 +64,7 @@ type LoopState struct {
 
 // New() constructs a new sseclient.Client from a http.Client with information on
 // how to connect to the event source and a http.Request containing information
-// about the path and paramaters. New() will set the Accpet and Cache-Control
+// about the path and parameters. New() will set the Accpet and Cache-Control
 // headers as recommended.
 func New(client *http.Client, request *http.Request) (*Client, error) {
 	request.Header.Set("Accept", "text/event-stream")
@@ -148,9 +148,9 @@ func eventLoop(events chan<- Event, data io.Reader, state *LoopState, d Decoder)
 		case bytes.Equal(fieldName(line), []byte("id")):
 			state.LastId = string(fieldValue(line))
 		case bytes.Equal(fieldName(line), []byte("retry")):
-			new_time, err := strconv.Atoi(string(fieldValue(line)))
+			newTime, err := strconv.Atoi(string(fieldValue(line)))
 			if err == nil {
-				state.ReconnectTime = new_time
+				state.ReconnectTime = newTime
 			}
 		}
 	}
