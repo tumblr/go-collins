@@ -1,0 +1,16 @@
+{
+  "status": "success:ok",
+  "data": {
+    "POOLS": [
+      {
+        "NAME": "OOB-POD01",
+        "NETWORK": "172.16.32.0/20",
+        "START_ADDRESS": "172.16.32.20",
+        "SPECIFIED_GATEWAY": "Unspecified",
+        "GATEWAY": "172.16.32.1",
+        "BROADCAST": "172.16.47.255",
+        "POSSIBLE_ADDRESSES": 4094
+      }
+    ]
+  }
+}
