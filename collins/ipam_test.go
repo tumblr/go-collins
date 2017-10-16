@@ -155,8 +155,8 @@ func TestIPAMService_AssetFromAddress(t *testing.T) {
 		t.Errorf("IPAMService.AssetFromAddress returned error: %v", err)
 	}
 
-	if asset.Tag != "tag1" {
-		t.Errorf("IPAMService.AssetFromAddress return tag %s, want tag1.", asset.Tag)
+	if asset.Metadata.Tag != "tag1" {
+		t.Errorf("IPAMService.AssetFromAddress return tag %s, want tag1.", asset.Metadata.Tag)
 	}
 }
 

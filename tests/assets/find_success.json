@@ -254,6 +254,16 @@
             "SERIAL": "1234567890"
           }
         },
+        "CLASSIFICATION": {
+            "ID": 1305,
+            "TAG": "app",
+            "STATE": null,
+            "STATUS": "Incomplete",
+            "TYPE": "CONFIGURATION",
+            "CREATED": "2014-09-17T13:47:15",
+            "UPDATED": "2014-09-17T13:50:00",
+            "DELETED": null
+        },
         "LLDP": {
           "INTERFACES": [
             {
@@ -610,6 +620,16 @@
             "VENDOR": "Dell Inc.",
             "SERIAL": ""
           }
+        },
+        "CLASSIFICATION": {
+            "ID": 1305,
+            "TAG": "app",
+            "STATE": null,
+            "STATUS": "Incomplete",
+            "TYPE": "CONFIGURATION",
+            "CREATED": "2014-09-17T13:47:15",
+            "UPDATED": "2014-09-17T13:50:00",
+            "DELETED": null
         },
         "LLDP": {
           "INTERFACES": [

@@ -223,6 +223,16 @@
           }
         ]
       },
+      "CLASSIFICATION": {
+        "ID": 1305,
+        "TAG": "app",
+        "STATE": null,
+        "STATUS": "Incomplete",
+        "TYPE": "CONFIGURATION",
+        "CREATED": "2014-09-17T13:47:15",
+        "UPDATED": "2014-09-17T13:50:00",
+        "DELETED": null
+      },
       "LLDP": {
         "INTERFACES": [
           {
