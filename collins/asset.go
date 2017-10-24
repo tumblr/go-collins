@@ -15,13 +15,14 @@ type AssetService struct {
 // The Asset struct contains all the information available about a certain
 // asset.
 type Asset struct {
-	Metadata   `json:"ASSET"`
-	Hardware   `json:"HARDWARE"`
-	Addresses  []Address `json:"ADDRESSES"`
-	LLDP       `json:"LLDP"`
-	IPMI       `json:"IPMI"`
-	Attributes map[string]map[string]string `json:"ATTRIBS"`
-	Power      []Power                      `json:"POWER"`
+	Metadata       `json:"ASSET"`
+	Hardware       `json:"HARDWARE"`
+	Classification `json:"CLASSIFICATION"`
+	Addresses      []Address `json:"ADDRESSES"`
+	LLDP           `json:"LLDP"`
+	IPMI           `json:"IPMI"`
+	Attributes     map[string]map[string]string `json:"ATTRIBS"`
+	Power          []Power                      `json:"POWER"`
 }
 
 // Metadata contains data about the asset such as asset tag, name, state and
@@ -47,6 +48,18 @@ type Hardware struct {
 	NICs   []NIC    `json:"NIC"`
 	Disks  []Disk   `json:"DISK"`
 	Base   `json:"BASE"`
+}
+
+// The Classificaton struct contains information about the asset's classification.
+type Classification struct {
+	ID      int    `json:"ID"`
+	Tag     string `json:"TAG"`
+	State   State  `json:"STATE"`
+	Status  string `json:"STATUS"`
+	Type    string `json:"TYPE"`
+	Created string `json:"CREATED"`
+	Updated string `json:"UPDATED"`
+	Deleted string `json:"DELETED"`
 }
 
 // CPU represents a single physical CPU on an asset.

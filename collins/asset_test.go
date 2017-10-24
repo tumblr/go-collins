@@ -16,8 +16,8 @@ func TestAssetService_Create(t *testing.T) {
 	if err != nil {
 		t.Errorf("Asset.Create returned error: %v", err)
 	}
-	if asset.Tag != "tag30" {
-		t.Errorf("Asset tag %s, want tag30.", asset.Tag)
+	if asset.Metadata.Tag != "tag30" {
+		t.Errorf("Asset tag %s, want tag30.", asset.Metadata.Tag)
 	}
 }
 
@@ -138,8 +138,8 @@ func TestAssetService_Get(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Asset.Get return error: %v", err)
 	}
-	if asset.Tag != "tag30" {
-		t.Errorf("Asset tag: %v, want tag30", asset.Tag)
+	if asset.Metadata.Tag != "tag30" {
+		t.Errorf("Asset tag: %v, want tag30", asset.Metadata.Tag)
 	}
 }
 
