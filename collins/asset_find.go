@@ -28,6 +28,12 @@ type AssetFindOpts struct {
 	PageOpts
 }
 
+// AssetFindSimilarOpts contains the options for find similar queries to Collins.
+// It currently only wraps the pagination options struct.
+type AssetFindSimilarOpts struct {
+	PageOpts
+}
+
 // AssetService.Find searches for assets in collins. See AssetFindOpts for
 // available options.
 //
@@ -60,8 +66,8 @@ func (a AssetService) Find(opts *AssetFindOpts) ([]Asset, *Response, error) {
 // available options.
 //
 // http://tumblr.github.io/collins/api.html#api-asset-asset-find-similar
-func (a AssetService) FindSimilar(tag string, opts *AssetFindOpts) ([]Asset, *Response, error) {
-	ustr, err := addOptions("api/asset/"+tag+"/similar", nil)
+func (a AssetService) FindSimilar(tag string, opts *AssetFindSimilarOpts) ([]Asset, *Response, error) {
+	ustr, err := addOptions("api/asset/"+tag+"/similar", opts)
 	if err != nil {
 		return nil, nil, err
 	}
