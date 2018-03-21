@@ -13,7 +13,7 @@ type ManagementService struct {
 type ProvisionOpts struct {
 	Suffix        string `url:"suffix"`
 	PrimaryRole   string `url:"primary_role"`
-	SecondaryRole string `url:"seconday_role"`
+	SecondaryRole string `url:"secondary_role"`
 	Pool          string `url:"pool"`
 	Activate      string `url:"activate"`
 	// The following are mandatory and set as parameters to Provision()
