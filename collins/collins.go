@@ -53,7 +53,7 @@ type Error struct {
 	} `json:"data"`
 }
 
-type container struct {
+type Container struct {
 	CollinsStatus string      `json:"status"`
 	Data          interface{} `json:"data"`
 }
@@ -65,7 +65,7 @@ type container struct {
 type Response struct {
 	*http.Response
 
-	*container
+	*Container
 
 	PreviousPage int
 	CurrentPage  int
@@ -269,7 +269,7 @@ func (c *Client) Do(req *http.Request, v interface{}) (*Response, error) {
 	// It also allows accessing `response.container.Status` etc. to get helpful
 	// response info from Collins.
 	if v != nil {
-		response.container = &container{
+		response.Container = &Container{
 			Data: v,
 		}
 	}
