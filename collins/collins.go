@@ -53,6 +53,7 @@ type Error struct {
 	} `json:"data"`
 }
 
+// Container is used to deserialize the JSON reponse from the API.
 type Container struct {
 	CollinsStatus string      `json:"status"`
 	Data          interface{} `json:"data"`
