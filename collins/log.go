@@ -10,13 +10,14 @@ type LogService struct {
 
 // Log represents a single log message along with metadata.
 type Log struct {
-	ID       int    `json:"ID"`
-	AssetTag string `json:"ASSET_TAG"`
-	Created  string `json:"CREATED"`
-	Format   string `json:"FORMAT"`
-	Source   string `json:"SOURCE"`
-	Type     string `json:"TYPE"`
-	Message  string `json:"MESSAGE"`
+	ID        int    `json:"ID"`
+	AssetTag  string `json:"ASSET_TAG"`
+	Created   string `json:"CREATED"`
+	CreatedBy string `json:"CREATED_BY"`
+	Format    string `json:"FORMAT"`
+	Source    string `json:"SOURCE"`
+	Type      string `json:"TYPE"`
+	Message   string `json:"MESSAGE"`
 }
 
 // LogCreateOpts are options to be passed when creating a log entry.
