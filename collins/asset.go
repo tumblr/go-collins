@@ -44,6 +44,7 @@ type Metadata struct {
 // an asset.
 type Hardware struct {
 	CPUs   []CPU    `json:"CPU"`
+	GPUs   []GPU    `json:"GPU"`
 	Memory []Memory `json:"MEMORY"`
 	NICs   []NIC    `json:"NIC"`
 	Disks  []Disk   `json:"DISK"`
@@ -70,6 +71,13 @@ type CPU struct {
 	Description string  `json:"DESCRIPTION"`
 	Product     string  `json:"PRODUCT"`
 	Vendor      string  `json:"VENDOR"`
+}
+
+// GPU represents a single physical GPU on an asset.
+type GPU struct {
+	Description string `json:"DESCRIPTION"`
+	Product     string `json:"PRODUCT"`
+	Vendor      string `json:"VENDOR"`
 }
 
 // Memory represents a single memory module installed in a bank on the asset.
