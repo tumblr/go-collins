@@ -41,7 +41,6 @@ type Client struct {
 	Tags       *TagService
 	Management *ManagementService
 	IPAM       *IPAMService
-	IPMI       *IPMIService
 	Firehose   *FirehoseService
 }
 
