@@ -153,7 +153,7 @@ func (s IPAMService) Pools() ([]Pool, *Response, error) {
 // networks.
 //
 // http://tumblr.github.io/collins/api.html#api-ipam-get-ipmi-address-pools
-func (s IPAMService) IpmiPools() ([]Pool, *Response, error) {
+func (s IPAMService) IPMIPools() ([]Pool, *Response, error) {
 	ustr, err := addOptions("api/ipmi/pools", nil)
 	if err != nil {
 		return nil, nil, err
