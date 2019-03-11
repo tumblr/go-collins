@@ -8,7 +8,6 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	"net"
 	"net/http"
 	"net/url"
 	"os"
@@ -114,11 +113,6 @@ func NewClient(username, password, baseurl string, timeout int) (*Client, error)
 	c := &Client{
 		client: &http.Client{
 			Timeout: time.Duration(timeout) * time.Second,
-			Transport: &http.Transport{
-				Dial: (&net.Dialer{
-					KeepAlive: 60 * time.Second,
-				}).Dial,
-			},
 		},
 		User:     username,
 		Password: password,
