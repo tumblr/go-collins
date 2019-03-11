@@ -126,7 +126,7 @@ func TestIPAMService_IPMIPools(t *testing.T) {
 	}
 
 	if len(pools) != 1 {
-		t.Errorf("IPAMService.IPMIPools returned %d pools, want 5.", len(pools))
+		t.Errorf("IPAMService.IPMIPools returned %d pools, want 1.", len(pools))
 	}
 }
 
