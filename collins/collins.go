@@ -79,9 +79,10 @@ type Response struct {
 // describe our pagination opts as structs. This also allows embedding of
 // pagination options directly into other request option structs.
 type PageOpts struct {
-	Page int    `url:"page,omitempty"`
-	Size int    `url:"size,omitempty"`
-	Sort string `url:"sort,omitempty"`
+	Page      int    `url:"page,omitempty"`
+	Size      int    `url:"size,omitempty"`
+	Sort      string `url:"sort,omitempty"`
+	SortField string `url:"sortField,omitempty"`
 }
 
 // PaginationResponse is used to represent the pagination information coming
