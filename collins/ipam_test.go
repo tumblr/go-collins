@@ -113,6 +113,23 @@ func TestIPAMService_Pools(t *testing.T) {
 	}
 }
 
+func TestIPAMService_IPMIPools(t *testing.T) {
+	setup()
+	defer teardown()
+
+	SetupGET(200, "/api/ipmi/pools", "../tests/ipam/ipmi_pools.json", "application/json;", t)
+
+	pools, _, err := client.IPAM.IPMIPools()
+
+	if err != nil {
+		t.Errorf("IPAMService.IPMIPools returned error: %v", err)
+	}
+
+	if len(pools) != 1 {
+		t.Errorf("IPAMService.IPMIPools returned %d pools, want 1.", len(pools))
+	}
+}
+
 func TestIPAMService_Get(t *testing.T) {
 	setup()
 	defer teardown()
