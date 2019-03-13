@@ -114,6 +114,6 @@ func TestManagementService_GetProvisioningProfiles(t *testing.T) {
 
 	_, _, err := client.Management.GetProvisioningProfiles()
 	if err != nil {
-		t.Errorf("ManagementService.GetProvisionProfiles returned error: %v", err)
+		t.Errorf("ManagementService.GetProvisioningProfiles returned error: %v", err)
 	}
 }
