@@ -155,9 +155,9 @@ func (s ManagementService) Provision(tag, profile, contact string, opts Provisio
 	return resp, err
 }
 
-// ListProfiles returns all available profiles for provisioning
+// GetProvisioningProfiles returns all available profiles for provisioning
 // http://tumblr.github.io/collins/api.html#api-asset%20managment-provisioning-profiles
-func (s ManagementService) ListProfiles() ([]Profile, *Response, error) {
+func (s ManagementService) GetProvisioningProfiles() ([]Profile, *Response, error) {
 	ustr, err := addOptions("api/provision/profiles", nil)
 	if err != nil {
 		return nil, nil, err

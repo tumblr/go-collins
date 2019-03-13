@@ -1,0 +1,31 @@
+{
+  "status": "success:ok",
+  "data": {
+    "PROFILES": [
+      {
+        "PROFILE": "devnode",
+        "LABEL": "Dev Machine",
+        "PREFIX": "dev",
+        "SUFFIX_ALLOWED": true,
+        "PRIMARY_ROLE": "DEVELOPMENT",
+        "REQUIRES_PRIMARY_ROLE": true,
+        "POOL": "DEVELOPMENT",
+        "REQUIRES_POOL": true,
+        "SECONDARY_ROLE": null,
+        "REQUIRES_SECONDARY_ROLE": false
+      },
+      {
+        "PROFILE": "plexnode",
+        "LABEL": "Plex Media Server",
+        "PREFIX": "plex",
+        "SUFFIX_ALLOWED": true,
+        "PRIMARY_ROLE": "PLEX",
+        "REQUIRES_PRIMARY_ROLE": true,
+        "POOL": "PRODUCTION",
+        "REQUIRES_POOL": true,
+        "SECONDARY_ROLE": null,
+        "REQUIRES_SECONDARY_ROLE": false
+      }
+    ]
+  }
+}

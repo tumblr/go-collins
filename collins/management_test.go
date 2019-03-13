@@ -105,3 +105,15 @@ func TestManagementService_Provision_error(t *testing.T) {
 		t.Errorf("ManagementService.Provision did not return error on invalid asset.")
 	}
 }
+
+func TestManagementService_GetProvisioningProfiles(t *testing.T) {
+	setup()
+	defer teardown()
+
+	SetupGET(200, "/api/provision/profiles", "../tests/management/provision_profiles.json", "application/json;", t)
+
+	_, _, err := client.Management.GetProvisioningProfiles()
+	if err != nil {
+		t.Errorf("ManagementService.GetProvisionProfiles returned error: %v", err)
+	}
+}
