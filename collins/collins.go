@@ -14,6 +14,7 @@ import (
 	"path"
 	"strconv"
 	"strings"
+	"time"
 
 	yaml "gopkg.in/yaml.v2"
 )
@@ -100,14 +101,20 @@ func (e *Error) Error() string {
 
 // NewClient creates a Client struct and returns a point to it. This client is
 // then used to query the various APIs collins provides.
-func NewClient(username, password, baseurl string) (*Client, error) {
+func NewClient(username, password, baseurl string, timeout int) (*Client, error) {
 	u, err := url.Parse(baseurl)
 	if err != nil {
 		return nil, err
 	}
 
+	if timeout == 0 {
+		timeout = 60
+	}
+
 	c := &Client{
-		client:   &http.Client{},
+		client: &http.Client{
+			Timeout: time.Duration(timeout) * time.Second,
+		},
 		User:     username,
 		Password: password,
 		BaseURL:  u,
@@ -160,6 +167,7 @@ func NewClientFromFiles(paths ...string) (*Client, error) {
 		Host     string
 		Username string
 		Password string
+		Timeout  int
 	}
 
 	err = yaml.Unmarshal(data, &creds)
@@ -167,7 +175,39 @@ func NewClientFromFiles(paths ...string) (*Client, error) {
 		return nil, err
 	}
 
-	return NewClient(creds.Username, creds.Password, creds.Host)
+	// If we don't find all credentials we are looking for in
+	// the normal keys see if the config is using symbols for
+	// keys. This matches the function of the ruby collins
+	// auth plugin.
+	var symbolCreds struct {
+		Host     string `yaml:":host"`
+		Username string `yaml:":username"`
+		Password string `yaml:":password"`
+		Timeout  int    `yaml:":timeout"`
+	}
+
+	err = yaml.Unmarshal(data, &symbolCreds)
+	if err != nil {
+		return nil, err
+	}
+
+	if creds.Host == "" {
+		creds.Host = symbolCreds.Host
+	}
+
+	if creds.Username == "" {
+		creds.Username = symbolCreds.Username
+	}
+
+	if creds.Password == "" {
+		creds.Password = symbolCreds.Password
+	}
+
+	if creds.Timeout == 0 {
+		creds.Timeout = symbolCreds.Timeout
+	}
+
+	return NewClient(creds.Username, creds.Password, creds.Host, creds.Timeout)
 }
 
 func openYamlFiles(paths ...string) (io.Reader, error) {

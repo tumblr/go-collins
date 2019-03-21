@@ -20,7 +20,7 @@ func setup() {
 	mux = http.NewServeMux()
 	server = httptest.NewServer(mux)
 
-	client, _ = NewClient("test", "test", "test")
+	client, _ = NewClient("test", "test", "test", 0)
 	url, _ := url.Parse(server.URL)
 	client.BaseURL = url
 }
@@ -76,7 +76,7 @@ func SetupDELETE(code int, url, file string, contentType string, t *testing.T) {
 }
 
 func TestNewClient(t *testing.T) {
-	client, err := NewClient("testuser", "testpassword", "https://collins.example.net")
+	client, err := NewClient("testuser", "testpassword", "https://collins.example.net", 0)
 	if err != nil {
 		t.Errorf("Failed to create client: %s", err)
 	}
