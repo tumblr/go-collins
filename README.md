@@ -17,6 +17,13 @@ changes between versions are. Each version is tagged as a release on github, so
 you can use go mod to ensure you are getting the version you expect, and upgrade
 between versions in a safe manner.
 
+If you are not using go modules you can make sure you're using the expected
+major version by using the `gopkg.in` import path:
+
+```
+import "gopkg.in/tumblr/go-collins.v1/collins"
+```
+
 To start querying collins, import go-collins and set up a new `Client`
 by using `NewClient()` or `NewClientFromYaml()`. The second function will look
 for a `collins.yml` file and use credentials from it, while `NewClient()` takes
