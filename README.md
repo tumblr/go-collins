@@ -13,18 +13,16 @@ project](https://github.com/google/go-github).
 ## Usage
 
 We use [semantic versioning](http://semver.org/) to indicate what the scope of
-changes between versions are. You can use this to ensure breaking changes aren't
-introduced in to your application by using [gopkg.in](http://labix.org/gopkg.in)
-to get the package, and specify the major version there.
+changes between versions are. Each version is tagged as a release on github, so
+you can use go mod to ensure you are getting the version you expect, and upgrade
+between versions in a safe manner.
+
+If you are not using go modules you can make sure you're using the expected
+major version by using the `gopkg.in` import path:
 
 ```
-import "gopkg.in/tumblr/go-collins.v0/collins"
+import "gopkg.in/tumblr/go-collins.v1/collins"
 ```
-
-The current gopkg version is v0, which means that the package is of alpha or
-beta quality. While we do actively use go-collins at Tumblr and will try to
-maintain a stable interface, for now consider this a work-in-progress in that
-breaking changes may be made.
 
 To start querying collins, import go-collins and set up a new `Client`
 by using `NewClient()` or `NewClientFromYaml()`. The second function will look
@@ -35,7 +33,7 @@ credentials as parameters.
 import (
 	"fmt"
 
-	"gopkg.in/tumblr/go-collins.v0/collins"
+	"github.com/tumblr/go-collins/collins"
 )
 
 func main() {
