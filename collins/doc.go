@@ -5,10 +5,6 @@ you to manage your assets and their data from Go applications. It is very much
 influenced by the beautiful go-github project
 (https://github.com/google/go-github).
 
-While we do actively use go-collins at Tumblr and will try to maintain a stable
-interface, for now consider this a work-in-progress in that breaking changes may
-be made.
-
 Usage
 
 To start querying collins, import go-collins and set up a new `Client`
@@ -19,7 +15,7 @@ credentials as parameters.
 	import (
 		"fmt"
 
-		"gopkg.in/tumblr/go-collins.v0"
+		"github.com/tumblr/go-collins/collins"
 	)
 
 	func main() {
